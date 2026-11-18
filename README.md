@@ -365,33 +365,3 @@ If an attacker alters the payload (e.g. changing the username), the signature be
   app.post("/login", handleLogin);
   app.post("/login/", handleLogin);
   ```
-
----
-
-## 10. Viva Questions and Answers
-
-### Q1: Why do we use POST instead of GET for login?
-> **Answer:**
-> 1. **URL Exposure:** `GET` request parameters are appended directly to the URL query string (`/login?username=user&password=pass`), which gets logged in browser history, server access logs, web proxy logs, and network referrers.
-> 2. **Body Encryption:** `POST` passes credentials inside the HTTP request body. When encrypted over HTTPS/TLS, the entire request body remains confidential.
-> 3. **HTTP Semantics:** GET requests are defined to be idempotent and safe (read-only), whereas login typically initiates authentication state, sessions, or token generation.
-
-### Q2: What is the difference between Hashing and Encryption?
-> **Answer:**
-> - **Hashing:** A **one-way cryptographic algorithm** (such as bcrypt, Argon2, SHA-256). It converts data into a fixed-length string that **cannot** be reversed or decrypted back into the original plain text. Verification works by hashing the test input and comparing the resulting hashes. Passwords must always be hashed.
-> - **Encryption:** A **two-way cryptographic algorithm** (such as AES, RSA). It scrambles plain text into ciphertext using a key, and can be reversed back into the original plain text using the corresponding decryption key. Used for data in transit and sensitive data that must be read back later.
-
-### Q3: What arguments does `jwt.sign()` require?
-> **Answer:**
-> `jwt.sign(payload, secretOrPrivateKey, [options])` takes:
-> 1. **Payload:** A JavaScript object containing non-sensitive user identity claims (e.g., `{ username: "rohith_reddy" }`).
-> 2. **Secret Key:** A secret string known only to the backend server to sign the HMAC hash.
-> 3. **Options (optional):** Settings such as expiration duration (`expiresIn: "30d"`), algorithm (`algorithm: "HS256"`), or issuer.
-
-### Q4: What information should NEVER be placed in a JWT payload?
-> **Answer:**
-> - **Plain-text passwords, password hashes, API secrets, private encryption keys, Social Security / National ID numbers, or credit card numbers.**
-> - **Reason:** JWT payloads are **NOT encrypted**; they are merely Base64URL-encoded. Anyone who intercepts or reads the token can decode it instantly at [jwt.io](https://jwt.io) without needing the secret key. Only public identifiers (like `username` or user ID) and expiration timestamps belong in the payload.
-
----
-
