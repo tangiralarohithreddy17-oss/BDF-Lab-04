@@ -1,8 +1,8 @@
 # BDF Lab 04 – User Registration, Login and JWT Authentication
 
-**Course:** Backend Development Fundamentals (BDF) · Aurora  
-**Student Name:** [Your Name / T. Rohith Reddy]  
-**Registration Number:** [Your Registration Number / 252U1R3093]  
+**Course:** Backend Development Fundamentals  
+**Student Name:** T. Rohith Reddy 
+**Registration Number:** 252U1R3093  
 **Repository:** [https://github.com/tangiralarohithreddy17-oss/BDF-Lab-04](https://github.com/tangiralarohithreddy17-oss/BDF-Lab-04)
 
 ---
