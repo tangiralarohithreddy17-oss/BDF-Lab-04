@@ -395,10 +395,3 @@ If an attacker alters the payload (e.g. changing the username), the signature be
 
 ---
 
-## 11. Author and Academic Details
-
-- **Student Name:** [Your Name / T. Rohith Reddy]
-- **Registration Number:** [Your Registration Number / 252U1R3093]
-- **Course:** Backend Development Fundamentals (BDF) · Year II Term II
-- **Institution:** Aurora
-- **Faculty:** Joel Prashanth D
