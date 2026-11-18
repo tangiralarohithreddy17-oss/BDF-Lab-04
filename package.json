@@ -1,0 +1,27 @@
+{
+  "name": "bdf-lab-04",
+  "version": "1.0.0",
+  "description": "Backend Development Fundamentals - Lab 04: Registration, Login and JWT Authentication",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "express",
+    "bcrypt",
+    "jwt",
+    "sqlite",
+    "authentication",
+    "bdf-lab-04"
+  ],
+  "author": "T. Rohith Reddy (252U1R3093)",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "express": "^5.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^6.0.1"
+  }
+}
